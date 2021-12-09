@@ -1,13 +1,6 @@
-# Laravel SB Admin 2
+# Laravel Sisfo Fasilitas
 
-SB Admin 2 for Laravel.
-
-| Laravel Version | Branch |
-|-----------------|--------|
-| 8.0             | master |
-| 7.0             | v7.0   |
-| 6.0             | v6.0   |
-| 5.8             | v5.8   |
+Sistem Informasi untuk pengelolaan fasilitas kampus
 
 ## Requirements
 
@@ -28,6 +21,7 @@ SB Admin 2 for Laravel.
 - Rename or copy `.env.example` file to `.env`
 - Run `php artisan key:generate`
 - Set your database credentials in your `.env` file
+- Run `php artisan migrate --seed`
 
 ## Note
 
