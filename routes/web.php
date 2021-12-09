@@ -29,6 +29,8 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 Route::resource('/student', "StudentController");
+Route::resource('/facility',"FacilityController");
+Route::resource('/loan', "LoanController");
 
 Route::get('/about', function () {
     return view('about');

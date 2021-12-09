@@ -86,6 +86,18 @@
                 <span>{{ __('Students') }}</span>
             </a>
         </li>
+        <li class="nav-item {{ Nav::isRoute('facility.index') }} ">
+            <a class="nav-link" href="{{ route('facility.index') }}">
+                <i class="fas fa-fw fa-toolbox"></i>
+                <span>{{ __('Facilities') }}</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Nav::isRoute('loan.index') }} ">
+            <a class="nav-link" href="{{ route('loan.index') }}">
+                <i class="fas fa-fw fa-copy"></i>
+                <span>{{ __('Loans') }}</span>
+            </a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -164,7 +176,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Alejandro RH 2020</span>
+                    <span>Copyright &copy; UIN SISFO FASILITAS 2021</span>
                 </div>
             </div>
         </footer>

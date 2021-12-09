@@ -1,41 +1,41 @@
 @extends('layouts.admin')
 @section('main-content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Student Data') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800">{{ __('Loans Data') }}</h1>
     <div class="row">
         <div class="col">
             <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <div class="col">
-                            <h4 class="mt-2">Students List</h4>
+                            <h4 class="mt-2">Loans List</h4>
                         </div>
                         <div class="col">
                             <div class="float-right">
-                                <a href="#" class="btn btn-success">Add New Student</a>
+                                <a href="#" class="btn btn-success">Add New Loan Record</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-borderless" id="student_table">
+                    <table class="table table-borderless" id="loans_table">
                         <thead class="font-weight-bold">
                             <tr>
-                                <td>NIM</td>
-                                <td>Nama</td>
-                                <td>Email</td>
+                                <td>Nama Mahasiswa</td>
+                                <td>Fasilitas</td>
+                                <td>Tipe Fasilitas</td>
                                 <td>Jurusan</td>
-                                <td>Fakultas</td>
+                                <td>Tanggal Peminjaman</td>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($students as $student)
+                            @foreach ($loans as $loan)
                                 <tr>
-                                    <td>{{ $student->nim }}</td>
-                                    <td>{{ $student->getFullNameAttribute() }}</td>
-                                    <td>{{ $student->email }}</td>
-                                    <td>{{ $student->major }}</td>
-                                    <td>{{ $student->faculty }}</td>
+                                    <td>{{ $loan->user->getFullNameAttribute() }}</td>
+                                    <td>{{ $loan->facility->name }}</td>
+                                    <td>{{ $loan->facility->type }}</td>
+                                    <td>{{ $loan->user->major }}</td>
+                                    <td>{{ $loan->created_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -53,7 +53,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function() {
-            $('#student_table').DataTable();
+            $('#loans_table').DataTable();
         });
     </script>
 @endsection
