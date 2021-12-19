@@ -28,7 +28,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -86,17 +86,34 @@
                 <span>{{ __('Students') }}</span>
             </a>
         </li>
-        <li class="nav-item {{ Nav::isRoute('facility.index') }} ">
-            <a class="nav-link" href="{{ route('facility.index') }}">
-                <i class="fas fa-fw fa-toolbox"></i>
-                <span>{{ __('Facilities') }}</span>
+
+        <li class="nav-item {{ Nav::isRoute('tool.index') }} ">
+            <a class="nav-link" href="{{ route('tool.index') }}">
+                <i class="fas fa-fw fa-box-open"></i>
+                <span>{{ __('Tools') }}</span>
             </a>
         </li>
-        <li class="nav-item {{ Nav::isRoute('loan.index') }} ">
-            <a class="nav-link" href="{{ route('loan.index') }}">
-                <i class="fas fa-fw fa-copy"></i>
-                <span>{{ __('Loans') }}</span>
+
+        <li class="nav-item {{ Nav::isRoute('laboratorium.index') }} ">
+            <a class="nav-link" href="{{ route('laboratorium.index') }}">
+                <i class="fas fa-fw fa-door-open"></i>
+                <span>{{ __('Laboratorium') }}</span>
             </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-newspaper"></i>
+                <span>Loans</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Loan list</h6>
+                    <a class="collapse-item" href="{{ route('loan.laboratorium.index')}}">Laboratorium Loans</a>
+                    <a class="collapse-item" href="{{ route('loan.tool.index') }}">Tool Loans</a>
+                </div>
+            </div>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

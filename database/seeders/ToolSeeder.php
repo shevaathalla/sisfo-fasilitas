@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Facility;
+use App\Tool;
 use Illuminate\Database\Seeder;
 
-class FacilitySeeder extends Seeder
+class ToolSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class FacilitySeeder extends Seeder
      */
     public function run()
     {
-        factory(Facility::class,10)->create();
+        Tool::factory()->count(10)->create();
     }
 }

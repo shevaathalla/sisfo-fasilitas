@@ -19,16 +19,6 @@ class StudentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,29 +26,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        User::create([
+            "name" => $request->name,
+            "nim" => $request->nim,
+            "email" => $request->email,
+            "major" => $request->major,
+            "faculty" => $request->faculty,
+            "password" => "password",
+            "type" => "student",
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect()->route("student.index")->with('success', 'Data user berhasil ditambahkan');
     }
 
     /**
@@ -70,7 +48,17 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::where('id', $id)->update([
+            "name" => $request->name,
+            "last_name" => "",
+            "nim" => $request->nim,
+            "email" => $request->email,
+            "major" => $request->major,
+            "faculty" => $request->faculty,
+            "password" => "password",
+            "type" => "student",
+        ]);
+        return redirect()->route("student.index")->with('success', 'Data user berhasil diupdate');
     }
 
     /**
@@ -81,6 +69,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->route("student.index")->with('success', 'Data user berhasil dihapus');
     }
 }

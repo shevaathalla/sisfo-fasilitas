@@ -1,6 +1,7 @@
 <?php
-use Database\Seeders\FacilitySeeder;
+use Database\Seeders\LaboratoriumSeeder;
 use Database\Seeders\LoanSeeder;
+use Database\Seeders\ToolSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 
@@ -15,8 +16,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            FacilitySeeder::class,
+            LaboratoriumSeeder::class,
+            ToolSeeder::class,
             LoanSeeder::class
-        ]);
+        ]);        
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Loan;
+use App\Laboratorium;
 use Illuminate\Database\Seeder;
 
-class LoanSeeder extends Seeder
+class LaboratoriumSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class LoanSeeder extends Seeder
      */
     public function run()
     {
-        factory(Loan::class,10)->create();
+        Laboratorium::factory()->count(10)->create();
     }
 }
