@@ -19,8 +19,8 @@ class CreateLoanLaboratoriaTable extends Migration
             $table->foreignId('laboratorium_id')->nullable()->constrained()->onDelete('cascade');            
             $table->text('reason');
             $table->text('proposal');
-            $table->boolean('department_verification');
-            $table->boolean('faculty_verification');
+            $table->boolean('department_verification')->default(false);
+            $table->boolean('faculty_verification')->default(false);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
